@@ -63,6 +63,36 @@ CREATE TABLE TUSER(
 -- 멀티 게시판 정보
 
 
+ INSERT INTO board (
+	idx
+	,menu_id
+	,title
+	,content
+	,writer
+)VALUES (
+	(SELECT NVL(MAX(IDX),0)+1 FROM BOARD)
+	,'MENU03'
+	,'JAVA3'
+	,'어왔니3'
+	,'jsp'
+);
+commit;
+ 
+ 
+SELECT
+    idx
+    ,menu_id
+    ,title
+    ,content
+    ,writer
+    ,TO_CHAR(regdate, 'YYYY-DD-MM') REGDATE
+    ,hit
+FROM
+    board
+WHERE
+    MENU_ID = 'MENU01'
+ORDER BY
+    IDX DESC;
 
 
 
