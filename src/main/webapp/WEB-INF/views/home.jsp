@@ -7,22 +7,26 @@
 <title>Insert title here</title>
 <style>
 	body {
-		margin: 0;
+		margin : 0;
+		background-color : #f5f7fa;
+		font-family: inherit;
 	}
 
 	main {
 		width: 300px;
 		margin: 100px auto;
 		padding: 30px;
-		background: white;
+		background-color: white;
 		border : 1px solid black;
 		border-radius: 10px;
+		box-shadow : 0 0 10px rgba(0,0,0,0.1);
 		text-align: center;
 	}
 
 	h2 {
 		margin-bottom: 30px;
 		color: black;
+		font-weight : bold;
 	}
 
 	a {
@@ -44,6 +48,7 @@
 </head>
 
 <body>
+
 	<main>
 		<h2>HOME</h2>
 		<a href="/test"> 테스트 </a>

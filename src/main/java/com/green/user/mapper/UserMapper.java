@@ -4,6 +4,7 @@ package com.green.user.mapper;
 import com.green.user.dto.UserDTO;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -22,6 +23,10 @@ public interface UserMapper {
 
 	UserDTO getIdDupCheck(String uid);
 
-	UserDTO getIdDupCheck(UserDTO userDto); 
+	UserDTO getIdDupCheck(UserDTO userDto);
+
+	void updateUser(UserDTO userDto, String oldpw);
+
+	void updateUser2(Map<String, Object> map); 
 	
 }

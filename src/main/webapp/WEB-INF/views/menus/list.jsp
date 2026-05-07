@@ -10,12 +10,8 @@
 <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
 <link href="/css/common.css" rel="stylesheet"/>
 <style>
-	main {
-		text-align: center;
-		border : 1px solid black;
-		padding : 5px;
-		margin : 10px auto;
-	}
+
+
 	table,th,td {
 		border : 1px solid black;
 		border-collapse: collapse;

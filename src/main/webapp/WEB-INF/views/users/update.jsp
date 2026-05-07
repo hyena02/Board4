@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>유저 수정</title>
+<link href="/css/common.css" rel="stylesheet" />
 </head>
 <style>
 	main {
@@ -51,7 +52,7 @@
 	    <tr>
 	      <td><span class="red">*</span> 기존 비밀번호</td>
 	      <td>
-	        <input type="text" id="passwdold"/>
+	        <input type="text" name="oldpw" id="passwdold"/>
 	      </td>
 	    <tr>
 	      <td><span class="red">*</span> 새 비밀번호</td>
@@ -99,28 +100,28 @@
   </main>
   <!-- Javascript 코딩 : client validation -->
 	<script>
-	  const formEL 		= document.querySelector('form');
-	  const useridEL 	= document.querySelector('[name="userid"]');
-	  const passwdoldEL = document.querySelector('#passwdold');
-	  const passwdEL 	= document.querySelector('#passwd');
-	  const passwd2EL 	= document.querySelector('#passwd2');
-	  const usernameEL 	= document.querySelector('[name="username"]');
+	  const formEl 		= document.querySelector('form');
+	  const useridEl 	= document.querySelector('[name="userid"]');
+	  const passwdoldEl = document.querySelector('#passwdold');
+	  const passwdEl	= document.querySelector('#passwd');
+	  const passwd2El 	= document.querySelector('#passwd2');
+	  const usernameEl 	= document.querySelector('[name="username"]');
 	  
-	  formEL.addEventListener('submit',function(e){
+	  formEl.addEventListener('submit',function(e){
 		  
 // 아이디값 체크
-		  if(useridEL.value.trim()  == ''){
+		  if(useridEl.value.trim()  == ''){
 			  alert('아이디를 입력하세요');
-			  useridEL.focus();
+			  useridEl.focus();
 			  e.preventDefault() // event 취소
 			  e.stopPropagation() // event 버블링 방지
 			  return;
 		  }
 		  
 // 1-1.기존 비밀번호 입력 체크
-		  if(passwdoldEL.value.trim() == ''){
+		  if(passwdoldEl.value.trim() == ''){
 			  alert('기존 비밀번호를 입력하세요');
-			  passwdoldEL.focus();
+			  passwdoldEl.focus();
 			  e.preventDefault() 
 			  e.stopPropagation()
 			  return;
@@ -128,41 +129,41 @@
 		  
 		  
 // 1-2.기존 비밀번호 == 조회된 비밀번호 user.passwd 체크		
-		  if(passwdoldEL.value.trim() != '${user.passwd}'){
+		  if(passwdoldEl.value.trim() != '${user.passwd}'){
 			  alert('비밀번호가 옳지 않습니다. 다시해봐라');
-			  passwdoldEL.focus();
+			  passwdoldEl.focus();
 			  e.preventDefault() 
 			  e.stopPropagation()
 			  return;
 		  }
 // 2-1.비밀번호 값 체크
-		  if(passwdEL.value.trim() == ''){
+		  if(passwdEl.value.trim() == ''){
 			  alert('비밀번호를 입력하세요');
-			  passwdEL.focus();
+			  passwdEl.focus();
 			  e.preventDefault() 
 			  e.stopPropagation()
 			  return;
 		  }
 // 2-2. 비밀번호 확인 체크 
-		  if(passwd2EL.value.trim()  == ''){
+		  if(passwd2El.value.trim()  == ''){
 			  alert('비밀번호를 한번 더 입력하세요');
-			  passwd2EL.focus();
+			  passwd2El.focus();
 			  e.preventDefault() 
 			  e.stopPropagation()
 			  return;
 		  }
 // 2-3. 비밀번호 == 비밀번호 확인 체크
-		  if(passwd2EL.value != passwd2EL.value){
+		  if(passwd2El.value != passwd2El.value){
 			  alert('비밀번호가 일치하지 않습니다');
-			  passwd2EL.focus();
+			  passwd2El.focus();
 			  e.preventDefault() 
 			  e.stopPropagation()
 			  return;
 		  }
 // 이름 값 체크
-		  if(usernameEL.value.trim()  == ''){
+		  if(usernameEl.value.trim()  == ''){
 			  alert('이름을 입력하세요');
-			  usernameEL.focus();
+			  usernameEl.focus();
 			  e.preventDefault() 
 			  e.stopPropagation() 
 			  return;

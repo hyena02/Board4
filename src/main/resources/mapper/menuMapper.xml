@@ -22,9 +22,14 @@
 			resultType="com.green.menus.dto.MenuDTO">
 		SELECT     MENU_ID, MENU_NAME, MENU_SEQ
 		 FROM      MENUS
-		WHERE	   MENU_ID = #{menu_id}	
+		WHERE	     MENU_ID = #{menu_id}	
 	</select>
-  
+ <!-- menu_id로 menu_name 조회 -->
+ <insert id="getMenuName">
+ 	SELECT MENU_NAME
+ 	  FROM MENUS
+ 	 WHERE MENU_ID = #{menu_id}
+ </insert>
 <!-- 메뉴 추가 --> 
 	<insert id="insertMenu">
 		INSERT INTO MENUS (MENU_ID, MENU_NAME, MENU_SEQ)

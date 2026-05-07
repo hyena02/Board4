@@ -53,12 +53,27 @@
 		DELETE FROM TUSER
 		WHERE userid = #{userid}
 	</delete>	
-<!-- 유저 수정 -->
+	
+	
+<!-- 유저 수정 : oldpw, arg0, param1 -->
 <update id="updateUser">
+	UPDATE  TUSER
+	SET		 PASSWD   = #{userDto.passwd}
+			,USERNAME = #{userDto.username}
+			,EMAIL	  = #{userDto.email}
+	WHERE	USERID 	  = #{userDto.userid}
+	AND		PASSWD    = #{oldpw}
+</update>
+
+<!-- 사용자 수정 : map,
+		passwd(작동)
+		map.passwd(오류발생)-->
+<update id="updateUser2">
 	UPDATE  TUSER
 	SET		 PASSWD   = #{passwd}
 			,USERNAME = #{username}
 			,EMAIL	  = #{email}
 	WHERE	USERID 	  = #{userid}
+	AND		PASSWD    = #{oldpw}
 </update>
 </mapper>

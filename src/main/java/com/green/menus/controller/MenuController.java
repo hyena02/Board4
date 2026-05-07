@@ -75,7 +75,7 @@ public class MenuController {
 	
 		// db 에서 삭제
 		menuMapper.deleteMenu( menuDTO ); // MyBatis mapper 에는 menuDTO를 전달한다  
-		return "redirect:/menus/delete";
+		return  "redirect:/Menus/List";
 	
 	}
 	
